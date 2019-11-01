@@ -1,0 +1,83 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=8.12.0",
+    "npm": ">=6.4.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "express-jwt": "^5.3.1",
+    "graphql": "^14.5.8",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.0",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "passport-local": "^1.0.0",
+    "pretty-error": "^2.1.1",
+    "sequelize": "^5.19.8",
+    "source-map-support": "^0.5.13",
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "chokidar": "^3.2.2",
+    "del": "^5.1.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "flow-bin": "^0.109.0",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
+    "mkdirp": "^0.5.1",
+    "open-cli": "^5.0.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0"
+  },
+  "lint-staged": {
+    "ignore": [
+      "package.json"
+    ],
+    "linters": {
+      "*.{js,jsx}": [
+        "eslint --no-ignore --fix",
+        "git add --force"
+      ],
+      "*.{json,md,graphql}": [
+        "prettier --write",
+        "git add --force"
+      ]
+    }
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
+    "lint:fix": "yarn run lint --fix",
+    "flow": "flow",
+    "flow:check": "flow check",
+    "test": "jest",
+    "test-watch": "yarn run test --watch --notify",
+    "test-cover": "yarn run test --coverage",
+    "coverage": "yarn run test-cover && open-cli coverage/lcov-report/index.html",
+    "build": "babel-node tools/build",
+    "deploy": "babel-node tools/publish",
+    "start": "babel-node tools/run"
+  }
+}
