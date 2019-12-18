@@ -34,7 +34,6 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "chokidar": "^3.2.2",
-    "del": "^5.1.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.4.0",
@@ -43,6 +42,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
     "flow-bin": "^0.109.0",
+    "glob": "^7.1.6",
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "lint-staged": "^9.4.2",
@@ -76,8 +76,10 @@
     "test-watch": "yarn run test --watch --notify",
     "test-cover": "yarn run test --coverage",
     "coverage": "yarn run test-cover && open-cli coverage/lcov-report/index.html",
-    "build": "babel-node tools/build",
-    "deploy": "babel-node tools/publish",
-    "start": "babel-node tools/run"
+    "clean": "babel-node tools/run clean",
+    "copy": "babel-node tools/run copy",
+    "build": "babel-node tools/run build",
+    "deploy": "babel-node tools/run deploy",
+    "start": "babel-node tools/run start"
   }
 }
