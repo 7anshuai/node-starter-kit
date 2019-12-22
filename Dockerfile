@@ -1,4 +1,4 @@
-FROM node:8.10.0-alpine
+FROM node:8.12.0-alpine
 
 # Set a working directory
 WORKDIR /usr/src/app
@@ -13,6 +13,10 @@ RUN apk add --no-cache --virtual .gyp python make g++ \
 
 # Copy application files
 COPY ./build .
+
+# Set permissions for the "node" user
+RUN chown -R node:node /usr/src/app
+RUN chmod 755 /usr/src/app
 
 # Run the container under "node" user by default
 USER node
