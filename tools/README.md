@@ -11,7 +11,7 @@
 
 - Cleans up the output `/build` folder (`clean.js`)
 - Copies static files to the output folder (`copy.js`)
-- Compiles source files  with Babel (`compile.js`)
+- Compiles source files with Babel (`compile.js`)
 
 ### `yarn run deploy` (`deploy.js`)
 
@@ -20,11 +20,11 @@
 
 ## Options
 
-| Flag        | Description                                                                         |
-| ----------- | ----------------------------------------------------------------------------------- |
-| `--release` | Minimizes and optimizes the compiled output                                         |
-| `--verbose` | Prints detailed information to the console                                          |
-| `--docker`  | Build an image from a Dockerfile                                                    |
+| Flag        | Description                                 |
+| ----------- | ------------------------------------------- |
+| `--release` | Minimizes and optimizes the compiled output |
+| `--verbose` | Prints detailed information to the console  |
+| `--docker`  | Build an image from a Dockerfile            |
 
 For example:
 
