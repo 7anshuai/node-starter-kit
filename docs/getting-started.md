@@ -5,7 +5,7 @@
 - Mac OS X, Windows, or Linux
 - [Yarn](https://yarnpkg.com/) package + [Node.js](https://nodejs.org/) v8.16.2 or
   newer
-- Text editor or IDE pre-configured with React/JSX/Flow/ESlint
+- Text editor or IDE pre-configured with Flow/ESlint
   ([learn more](./how-to-configure-text-editors.md))
 
 ### Directory Layout
@@ -20,7 +20,7 @@ Before you start, take a moment to see how the project structure looks like:
 ├── /src/                       # The source code of the application
 │   ├── /data/                  # GraphQL server schema and data models
 │   ├── /config.js              # Global application settings
-│   ├── /server.js              # Server-side startup script
+│   ├── /server.js              # Server startup script
 │   └── ...                     # Other core framework modules
 ├── /test/                      # Unit tests
 ├── /tools/                     # Build automation scripts and utilities
@@ -60,9 +60,8 @@ This command will build the app from the source files (`/src`) into the output
 `/build` folder. As soon as the initial build completes, it will start the
 Node.js server (`node build/server.js`) on top of it.
 
-> [http://localhost:3000/](http://localhost:3000/) — Node.js server
-> [http://localhost:3000/graphql](http://localhost:3000/graphql) — GraphQL server
-> and IDE\
+> [http://localhost:3000/](http://localhost:3000/) — Node.js server\
+> [http://localhost:3000/graphql](http://localhost:3000/graphql) — GraphQL server and IDE
 
 Now you can open your app in a browser and start hacking.
 
