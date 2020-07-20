@@ -38,17 +38,17 @@ function spawnServer() {
         (requires, val) => requires.concat(['--require', val]),
         [],
       ),
+      '--nolazy',
       // If the parent Node.js process is running in debug (inspect) mode,
       // launch a debugger for Express.js app on the next port
-      ...process.execArgv.map(arg => {
-        if (arg.startsWith('--inspect')) {
+      ...process.execArgv
+        .filter(arg => arg.startsWith('--inspect'))
+        .map(arg => {
           const match = arg.match(/^--inspect=(\S+:|)(\d+)$/);
           if (match) debugPort = Number(match[2]) + 1;
           return `--inspect=${match ? match[1] : '0.0.0.0:'}${debugPort}`;
-        }
-        return arg;
-      }),
-      // '--no-lazy',
+        }),
+      ...process.execArgv.filter(arg => !arg.startsWith('--inspect')),
       // Enable "hot reload", it only works when debugger is off
       ...(isDebug
         ? ['./build/server.js']
