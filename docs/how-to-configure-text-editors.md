@@ -32,6 +32,7 @@ Easiest with [Package Control](https://packagecontrol.io/) and then "Package Con
 Install Package" (Ctrl+Shift+P)
 
 - [Babel](https://packagecontrol.io/packages/Babel)
+- [Flow](https://packagecontrol.io/packages/FlowType)
 - [Sublime-linter](http://www.sublimelinter.com/en/latest/)
 - [SublimeLinter-contrib-eslint](https://packagecontrol.io/packages/SublimeLinter-contrib-eslint)
 

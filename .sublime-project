@@ -1,0 +1,11 @@
+{
+  "folders":
+  [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "flow_bin_path": "node_modules/.bin/flow"
+  }
+}
