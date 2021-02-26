@@ -39,6 +39,7 @@ app.use(bodyParser.json());
 app.use(
   expressJwt({
     secret: config.auth.jwt.secret,
+    algorithms: ['HS256'],
     credentialsRequired: false,
     getToken: req => req.cookies.id_token,
   }),
