@@ -39,7 +39,7 @@ passport.use(
             where: { name: loginName, key: profile.id },
           });
           if (userLogin) {
-            // There is already a GitHub account that belongs to you.
+            // There is already a Facebook account that belongs to you.
             // Sign in with that account or delete it, then link it with your current account.
             done();
           } else {
@@ -97,7 +97,7 @@ passport.use(
             });
             if (user) {
               // There is already an account using this email address. Sign in to
-              // that account and link it with GitHub manually from Account Settings.
+              // that account and link it with Facebook manually from Account Settings.
               done(null);
             } else {
               user = await User.create(
